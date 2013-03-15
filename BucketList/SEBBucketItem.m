@@ -10,10 +10,7 @@
 
 @interface SEBBucketItem ()
 
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *description;
-@property (strong, nonatomic) CLLocation *location;
-@property (nonatomic) Boolean done;
+
 
 @end
 

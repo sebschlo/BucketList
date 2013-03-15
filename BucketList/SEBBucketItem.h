@@ -10,5 +10,9 @@
 #import <CoreLocation/CoreLocation.h>
 
 @interface SEBBucketItem : NSObject
+@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *description;
+@property (strong, nonatomic) CLLocation *location;
+@property (nonatomic) Boolean done;
 - (id) initWithTitle:(NSString *)name description:(NSString *)description location:(CLLocation *)location;
 @end

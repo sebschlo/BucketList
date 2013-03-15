@@ -7,6 +7,7 @@
 //
 
 #import "SEBTableViewController.h"
+#import "SEBBucketItem.h"
 
 #define kSEBCellIdentifier @"My Cell Identifier"
 
@@ -19,6 +20,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.bucketListItems = [[NSMutableArray alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,8 +42,8 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:kSEBCellIdentifier];
     }
 
-    NSString *cellValue = [self.bucketListItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = cellValue;
+    SEBBucketItem *item = [self.bucketListItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = item.name;
 
     return cell;
 }

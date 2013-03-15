@@ -110,7 +110,19 @@
     }
 }
 
+- (void)addLocation:(NSString *)title description:(NSString *)description location:(CLLocation *)location {
+
+}
+
+#pragma mark - Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"addSegue"]) {
+    } 
+}
+
 - (IBAction)unwindFromSEBAddViewController:(UIStoryboardSegue *)segue {
+
     // Get the segue controller
     SEBAddViewController *segueController = [segue sourceViewController];
 
@@ -120,19 +132,8 @@
     // Add item to array
     SEBBucketItem *item = [[SEBBucketItem alloc] initWithTitle:segueController.titleBox.text description:segueController.descriptionBox.text location:location];
     [self.myTableView.bucketListItems addObject:item];
+    [self.myTableView.tableView reloadData];
 
-}
-
-- (void)addLocation:(NSString *)title description:(NSString *)description location:(CLLocation *)location {
-
-}
-
-#pragma mark - Segue
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"addSegue"]) {
-
-    } 
 }
 
 @end

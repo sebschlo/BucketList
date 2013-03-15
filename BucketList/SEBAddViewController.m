@@ -19,7 +19,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-//    self.addViewNavBar.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navBarImage.png"]];
+    self.addViewNavBar.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navBarImage.png"]];
     [self.titleBox becomeFirstResponder];
     self.descriptionBox.layer.cornerRadius = 5;
 
@@ -31,9 +31,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)prepareDescriptionBox {
-    self.descriptionBox.text = @"";
-    self.descriptionBox.textColor = [UIColor blackColor];
-}
 
 @end
