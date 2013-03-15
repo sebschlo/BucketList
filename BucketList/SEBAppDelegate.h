@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SEBAppDelegate : UIResponder <UIApplicationDelegate>
-
+@interface SEBAppDelegate : UIResponder <UIApplicationDelegate, UIAlertViewDelegate>
 @property (strong, nonatomic) UIWindow *window;
-
 @end

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E0A7A1A16F01FE90049C7F3 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0A7A1716F01FE90049C7F3 /* background.png */; };
+		9E0A7A1B16F01FE90049C7F3 /* big_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0A7A1816F01FE90049C7F3 /* big_icon.png */; };
+		9E0A7A1C16F01FE90049C7F3 /* small_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0A7A1916F01FE90049C7F3 /* small_icon.png */; };
+		9E0A7A1F16F04F500049C7F3 /* background2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0A7A1D16F04F500049C7F3 /* background2.png */; };
+		9E0A7A2016F04F500049C7F3 /* background3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0A7A1E16F04F500049C7F3 /* background3.png */; };
+		9E0A7A2216F050670049C7F3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E0A7A2116F050670049C7F3 /* QuartzCore.framework */; };
+		9E0A7A2416F0C5BC0049C7F3 /* navBarImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0A7A2316F0C5BC0049C7F3 /* navBarImage.png */; };
+		9E0A7A2716F0E6C20049C7F3 /* SEBTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A7A2616F0E6C20049C7F3 /* SEBTableViewController.m */; };
+		9E29BBB116F18E6B008B5874 /* SEBAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E29BBB016F18E6B008B5874 /* SEBAddViewController.m */; };
+		9E91FEDF16F25C0C00348FE0 /* SEBBucketItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E91FEDE16F25C0C00348FE0 /* SEBBucketItem.m */; };
+		9E91FEE316F25C7500348FE0 /* SEBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E91FEE216F25C7500348FE0 /* SEBMapViewController.m */; };
+		9E91FEE616F25C8400348FE0 /* SEBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E91FEE516F25C8400348FE0 /* SEBDetailViewController.m */; };
 		9EF6EB2416EE7D9200FC67DE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF6EB2316EE7D9200FC67DE /* UIKit.framework */; };
 		9EF6EB2616EE7D9200FC67DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF6EB2516EE7D9200FC67DE /* Foundation.framework */; };
 		9EF6EB2816EE7D9200FC67DE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF6EB2716EE7D9200FC67DE /* CoreGraphics.framework */; };
@@ -23,6 +35,8 @@
 		9EF6EB4A16EE7D9300FC67DE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF6EB2516EE7D9200FC67DE /* Foundation.framework */; };
 		9EF6EB5216EE7D9300FC67DE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9EF6EB5016EE7D9300FC67DE /* InfoPlist.strings */; };
 		9EF6EB5516EE7D9300FC67DE /* BucketListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EF6EB5416EE7D9300FC67DE /* BucketListTests.m */; };
+		9EF6EB5F16EE7E9500FC67DE /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF6EB5E16EE7E9500FC67DE /* MapKit.framework */; };
+		9EF6EB6116EE7E9B00FC67DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EF6EB6016EE7E9B00FC67DE /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +50,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E0A7A1716F01FE90049C7F3 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../background.png; sourceTree = "<group>"; };
+		9E0A7A1816F01FE90049C7F3 /* big_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = big_icon.png; path = ../big_icon.png; sourceTree = "<group>"; };
+		9E0A7A1916F01FE90049C7F3 /* small_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = small_icon.png; path = ../small_icon.png; sourceTree = "<group>"; };
+		9E0A7A1D16F04F500049C7F3 /* background2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background2.png; sourceTree = SOURCE_ROOT; };
+		9E0A7A1E16F04F500049C7F3 /* background3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background3.png; sourceTree = SOURCE_ROOT; };
+		9E0A7A2116F050670049C7F3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9E0A7A2316F0C5BC0049C7F3 /* navBarImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navBarImage.png; sourceTree = SOURCE_ROOT; };
+		9E0A7A2516F0E6C20049C7F3 /* SEBTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBTableViewController.h; sourceTree = "<group>"; };
+		9E0A7A2616F0E6C20049C7F3 /* SEBTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBTableViewController.m; sourceTree = "<group>"; };
+		9E29BBAF16F18E6B008B5874 /* SEBAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBAddViewController.h; sourceTree = "<group>"; };
+		9E29BBB016F18E6B008B5874 /* SEBAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBAddViewController.m; sourceTree = "<group>"; };
+		9E91FEDD16F25C0C00348FE0 /* SEBBucketItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBBucketItem.h; sourceTree = "<group>"; };
+		9E91FEDE16F25C0C00348FE0 /* SEBBucketItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBBucketItem.m; sourceTree = "<group>"; };
+		9E91FEE116F25C7500348FE0 /* SEBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBMapViewController.h; sourceTree = "<group>"; };
+		9E91FEE216F25C7500348FE0 /* SEBMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBMapViewController.m; sourceTree = "<group>"; };
+		9E91FEE416F25C8400348FE0 /* SEBDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBDetailViewController.h; sourceTree = "<group>"; };
+		9E91FEE516F25C8400348FE0 /* SEBDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBDetailViewController.m; sourceTree = "<group>"; };
 		9EF6EB2016EE7D9200FC67DE /* BucketList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BucketList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EF6EB2316EE7D9200FC67DE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9EF6EB2516EE7D9200FC67DE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +89,8 @@
 		9EF6EB5116EE7D9300FC67DE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9EF6EB5316EE7D9300FC67DE /* BucketListTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BucketListTests.h; sourceTree = "<group>"; };
 		9EF6EB5416EE7D9300FC67DE /* BucketListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BucketListTests.m; sourceTree = "<group>"; };
+		9EF6EB5E16EE7E9500FC67DE /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9EF6EB6016EE7E9B00FC67DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +98,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E0A7A2216F050670049C7F3 /* QuartzCore.framework in Frameworks */,
+				9EF6EB6116EE7E9B00FC67DE /* CoreLocation.framework in Frameworks */,
+				9EF6EB5F16EE7E9500FC67DE /* MapKit.framework in Frameworks */,
 				9EF6EB2416EE7D9200FC67DE /* UIKit.framework in Frameworks */,
 				9EF6EB2616EE7D9200FC67DE /* Foundation.framework in Frameworks */,
 				9EF6EB2816EE7D9200FC67DE /* CoreGraphics.framework in Frameworks */,
@@ -84,6 +120,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E91FEE016F25C2900348FE0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9EF6EB3B16EE7D9300FC67DE /* MainStoryboard.storyboard */,
+				9E29BBAF16F18E6B008B5874 /* SEBAddViewController.h */,
+				9E29BBB016F18E6B008B5874 /* SEBAddViewController.m */,
+				9E91FEE416F25C8400348FE0 /* SEBDetailViewController.h */,
+				9E91FEE516F25C8400348FE0 /* SEBDetailViewController.m */,
+				9E91FEE116F25C7500348FE0 /* SEBMapViewController.h */,
+				9E91FEE216F25C7500348FE0 /* SEBMapViewController.m */,
+				9E0A7A2516F0E6C20049C7F3 /* SEBTableViewController.h */,
+				9E0A7A2616F0E6C20049C7F3 /* SEBTableViewController.m */,
+				9EF6EB3E16EE7D9300FC67DE /* SEBViewController.h */,
+				9EF6EB3F16EE7D9300FC67DE /* SEBViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		9EF6EB1716EE7D9200FC67DE = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +160,9 @@
 		9EF6EB2216EE7D9200FC67DE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E0A7A2116F050670049C7F3 /* QuartzCore.framework */,
+				9EF6EB6016EE7E9B00FC67DE /* CoreLocation.framework */,
+				9EF6EB5E16EE7E9500FC67DE /* MapKit.framework */,
 				9EF6EB2316EE7D9200FC67DE /* UIKit.framework */,
 				9EF6EB2516EE7D9200FC67DE /* Foundation.framework */,
 				9EF6EB2716EE7D9200FC67DE /* CoreGraphics.framework */,
@@ -119,9 +176,9 @@
 			children = (
 				9EF6EB3216EE7D9200FC67DE /* SEBAppDelegate.h */,
 				9EF6EB3316EE7D9200FC67DE /* SEBAppDelegate.m */,
-				9EF6EB3B16EE7D9300FC67DE /* MainStoryboard.storyboard */,
-				9EF6EB3E16EE7D9300FC67DE /* SEBViewController.h */,
-				9EF6EB3F16EE7D9300FC67DE /* SEBViewController.m */,
+				9E91FEE016F25C2900348FE0 /* Views */,
+				9E91FEDD16F25C0C00348FE0 /* SEBBucketItem.h */,
+				9E91FEDE16F25C0C00348FE0 /* SEBBucketItem.m */,
 				9EF6EB2A16EE7D9200FC67DE /* Supporting Files */,
 			);
 			path = BucketList;
@@ -137,6 +194,12 @@
 				9EF6EB3516EE7D9200FC67DE /* Default.png */,
 				9EF6EB3716EE7D9200FC67DE /* Default@2x.png */,
 				9EF6EB3916EE7D9200FC67DE /* Default-568h@2x.png */,
+				9E0A7A1716F01FE90049C7F3 /* background.png */,
+				9E0A7A1816F01FE90049C7F3 /* big_icon.png */,
+				9E0A7A1916F01FE90049C7F3 /* small_icon.png */,
+				9E0A7A1D16F04F500049C7F3 /* background2.png */,
+				9E0A7A1E16F04F500049C7F3 /* background3.png */,
+				9E0A7A2316F0C5BC0049C7F3 /* navBarImage.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -237,6 +300,12 @@
 				9EF6EB3816EE7D9200FC67DE /* Default@2x.png in Resources */,
 				9EF6EB3A16EE7D9300FC67DE /* Default-568h@2x.png in Resources */,
 				9EF6EB3D16EE7D9300FC67DE /* MainStoryboard.storyboard in Resources */,
+				9E0A7A1A16F01FE90049C7F3 /* background.png in Resources */,
+				9E0A7A1B16F01FE90049C7F3 /* big_icon.png in Resources */,
+				9E0A7A1C16F01FE90049C7F3 /* small_icon.png in Resources */,
+				9E0A7A1F16F04F500049C7F3 /* background2.png in Resources */,
+				9E0A7A2016F04F500049C7F3 /* background3.png in Resources */,
+				9E0A7A2416F0C5BC0049C7F3 /* navBarImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +343,11 @@
 				9EF6EB3016EE7D9200FC67DE /* main.m in Sources */,
 				9EF6EB3416EE7D9200FC67DE /* SEBAppDelegate.m in Sources */,
 				9EF6EB4016EE7D9300FC67DE /* SEBViewController.m in Sources */,
+				9E0A7A2716F0E6C20049C7F3 /* SEBTableViewController.m in Sources */,
+				9E29BBB116F18E6B008B5874 /* SEBAddViewController.m in Sources */,
+				9E91FEDF16F25C0C00348FE0 /* SEBBucketItem.m in Sources */,
+				9E91FEE316F25C7500348FE0 /* SEBMapViewController.m in Sources */,
+				9E91FEE616F25C8400348FE0 /* SEBDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +528,7 @@
 				9EF6EB5A16EE7D9300FC67DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9EF6EB5B16EE7D9300FC67DE /* Build configuration list for PBXNativeTarget "BucketListTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +537,7 @@
 				9EF6EB5D16EE7D9300FC67DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,26 +1,140 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="pbo-9v-IJ1">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="SEBViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <view key="view" contentMode="scaleToFill" id="33v-L4-dzP">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="background3.png" translatesAutoresizingMaskIntoConstraints="NO" id="2SQ-Gv-eLB"/>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2SQ-Gv-eLB" firstAttribute="top" secondItem="33v-L4-dzP" secondAttribute="top" type="default" id="HEu-yx-LWw"/>
+                            <constraint firstItem="2SQ-Gv-eLB" firstAttribute="leading" secondItem="33v-L4-dzP" secondAttribute="leading" type="default" id="lbl-bi-OBg"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="J6r-3Q-kMb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="N7Z-uO-YWN">
+                            <color key="tintColor" red="0.69019609689999994" green="0.5647059083" blue="0.36078432199999999" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <segue destination="riN-va-HWp" kind="push" identifier="addSegue" id="Wa0-Jc-TWz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navBar" destination="J6r-3Q-kMb" id="Gfg-qx-VyF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-353" y="106"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="OOP-zZ-KUy">
+            <objects>
+                <viewController id="riN-va-HWp" customClass="SEBAddViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="T4E-1n-hYp">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="background3.png" translatesAutoresizingMaskIntoConstraints="NO" id="abJ-An-T7Z"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eET-yU-fI9">
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TwR-B6-6Xh">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eET-yU-fI9" firstAttribute="leading" secondItem="T4E-1n-hYp" secondAttribute="leading" constant="8" type="user" id="61s-KZ-NaQ"/>
+                            <constraint firstItem="abJ-An-T7Z" firstAttribute="top" secondItem="T4E-1n-hYp" secondAttribute="top" type="default" id="88a-La-sKk"/>
+                            <constraint firstItem="eET-yU-fI9" firstAttribute="top" secondItem="T4E-1n-hYp" secondAttribute="top" constant="35" id="KRV-dC-Tjs"/>
+                            <constraint firstItem="TwR-B6-6Xh" firstAttribute="leading" secondItem="T4E-1n-hYp" secondAttribute="leading" constant="8" type="user" id="KZD-O6-YH0"/>
+                            <constraint firstAttribute="trailing" secondItem="TwR-B6-6Xh" secondAttribute="trailing" constant="8" type="user" id="f53-xf-rJ0"/>
+                            <constraint firstAttribute="trailing" secondItem="eET-yU-fI9" secondAttribute="trailing" constant="8" type="user" id="ifM-sn-rw0"/>
+                            <constraint firstItem="TwR-B6-6Xh" firstAttribute="top" secondItem="T4E-1n-hYp" secondAttribute="top" constant="103" id="sTG-8a-Swz"/>
+                            <constraint firstItem="abJ-An-T7Z" firstAttribute="leading" secondItem="T4E-1n-hYp" secondAttribute="leading" type="default" id="yhZ-dC-SgW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QwH-Wa-bON">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="aL6-HR-4Wm">
+                            <color key="tintColor" red="0.69019609689999994" green="0.5647059083" blue="0.36078432199999999" alpha="1" colorSpace="deviceRGB"/>
+                            <connections>
+                                <action selector="saveItem:" destination="riN-va-HWp" id="lyk-zZ-SHh"/>
+                                <segue destination="xQJ-5S-VLS" kind="unwind" unwindAction="unwindFromSEBAddViewController:" id="hOf-ff-3AQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="addNavBar" destination="QwH-Wa-bON" id="MDJ-DB-bYO"/>
+                        <outlet property="descriptionBox" destination="TwR-B6-6Xh" id="Ewt-SJ-fCa"/>
+                        <outlet property="saveButton" destination="aL6-HR-4Wm" id="hgi-gW-c5U"/>
+                        <outlet property="titleBox" destination="eET-yU-fI9" id="bvD-qo-BNY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nhu-vr-2lL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="xQJ-5S-VLS" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="107" y="106"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LEu-C3-OuY">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="pbo-9v-IJ1" sceneMemberID="viewController">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="blackOpaque" id="cAn-q4-wDH">
+                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="OQb-SV-Zbf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PUn-ez-reN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-884" y="106"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background3.png" width="320" height="480"/>
+    </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SEBAddViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEBAddViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="addViewNavBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="descriptionBox" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="titleBox" candidateClass="UITextField"/>
+            </relationships>
+        </class>
+        <class className="SEBViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEBViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="unwindFromSEBAddViewController:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>
