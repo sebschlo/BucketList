@@ -7,7 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "SEBBucketItem.h"
+
+@protocol ProcessDataDelegate <NSObject>
+@required
+- (void)performSegue:(SEBBucketItem*)item;
+@end
 
 @interface SEBTableViewController : UITableViewController
+{
+    id <ProcessDataDelegate> delegate;
+}
 @property (strong, nonatomic) NSMutableArray *bucketListItems;
+@property (retain) id delegate;
 @end

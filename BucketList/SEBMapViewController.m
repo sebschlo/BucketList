@@ -14,6 +14,8 @@
 
 @implementation SEBMapViewController
 
+BOOL moveMap = YES;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -35,6 +37,7 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self.locationManager startUpdatingLocation];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,21 +61,22 @@
     CLLocation *location = [locations lastObject];
     self.currentLocation = location;
 
-    MKCoordinateSpan span = {0.03, 0.03};
-    MKCoordinateRegion region = {location.coordinate, span};
-    [self.myMapView setRegion:region animated:YES];
-    
-//    [self addPinToMapAtLocation:location];
+    if (moveMap) {
+        MKCoordinateSpan span = {0.01, 0.01};
+        MKCoordinateRegion region = {location.coordinate, span};
+        [self.myMapView setRegion:region animated:YES];
+        moveMap = NO;
+    }  
 }
 
 
-- (void)addPinToMapAtLocation:(CLLocation *)location
+- (void)addPinToMapAtLocation:(SEBBucketItem *)item
 {
     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
 
-    pin.coordinate = location.coordinate;
-    pin.title = @"foo";
-    pin.subtitle = @"bar";
+    pin.coordinate = item.location.coordinate;
+    pin.title = item.name;
+    pin.subtitle = item.description;
     [self.myMapView addAnnotation:pin];
 
 }

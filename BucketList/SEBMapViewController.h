@@ -10,8 +10,11 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "SEBBucketItem.h"
+
 
 @interface SEBMapViewController : UIViewController <CLLocationManagerDelegate>
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *currentLocation;
+- (void)addPinToMapAtLocation:(SEBBucketItem *)item;
 @end

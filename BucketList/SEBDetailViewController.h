@@ -7,7 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
+#import <MapKit/MapKit.h>
+#import <QuartzCore/QuartzCore.h>
 
-@interface SEBDetailViewController : UIViewController
+#import "SEBBucketItem.h"
+
+@interface SEBDetailViewController : UIViewController 
+
+@property (strong, nonatomic) SEBBucketItem *item;
+
+@property (weak, nonatomic) IBOutlet UITextField *detailViewDescription;
+@property (weak, nonatomic) IBOutlet UITextField *detailViewTitle;
+@property (weak, nonatomic) IBOutlet MKMapView *detailViewMapView;
+
 
 @end

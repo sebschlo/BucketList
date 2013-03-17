@@ -10,12 +10,15 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreLocation/CoreLocation.h>
 
+#import "SEBAddViewController.h"
+#import "SEBDetailViewController.h"
+#import "SEBMapViewController.h"
+#import "SEBTableViewController.h"
+#import "SEBBucketItem.h"
 
-@interface SEBViewController : UIViewController
+@interface SEBViewController : UIViewController <ProcessDataDelegate>
 
 - (void)stopGettingLocation;
 - (void)startGettingLocation;
-
-- (void) addLocation:(NSString *)title description:(NSString *)description location:(CLLocation *)location;
 
 @end

@@ -7,18 +7,13 @@
 //
 
 #import "SEBViewController.h"
-#import "SEBAddViewController.h"
-#import "SEBDetailViewController.h"
-#import "SEBMapViewController.h"
-#import "SEBTableViewController.h"
-#import "SEBBucketItem.h"
-
 
 @interface SEBViewController ()
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic) SEBMapViewController *myMapView;
 @property (strong, nonatomic) SEBTableViewController *myTableView;
+@property (strong, nonatomic) SEBBucketItem *lastItem;
 
 @end
 
@@ -66,18 +61,31 @@
     tableContainer.layer.borderWidth = 2;
 
     [self.view addSubview:tableContainer];
-
-    self.myTableView = [[SEBTableViewController alloc] initWithStyle: UITableViewStyleGrouped];
-
-    frame.origin.x = -10;
-    frame.origin.y = -10;
+    
+    UIView *background = [[UIView alloc] init];
+    frame.origin.x = 0;
+    frame.origin.y = 0;
     frame.size.width = 324;
     frame.size.height = 216;
+    background.frame = frame;
+    background.alpha = 0.5;
+    background.backgroundColor = [UIColor grayColor];
+    
+    [tableContainer addSubview:background];
+
+
+    self.myTableView = [[SEBTableViewController alloc] initWithStyle: UITableViewStylePlain];
+
+
 
     self.myTableView.tableView.frame = frame;
-    self.myTableView.tableView.alpha = 0.6;
+    self.myTableView.tableView.backgroundColor = [UIColor clearColor];
+    [self.myTableView.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+
     [tableContainer addSubview:self.myTableView.tableView];
 
+    // Protocol setup
+    [_myTableView setDelegate:self];
 
 }
 
@@ -95,7 +103,7 @@
     if (![CLLocationManager locationServicesEnabled] || [CLLocationManager authorizationStatus] != kCLAuthorizationStatusAuthorized ) {
 
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Location Services Disabled!"
-                                                        message:@"Please to to Settings and re-enable it."
+                                                        message:@"Please to to Settings>Privacy and re-enable it."
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -110,15 +118,22 @@
     }
 }
 
-- (void)addLocation:(NSString *)title description:(NSString *)description location:(CLLocation *)location {
-
-}
 
 #pragma mark - Segue
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"addSegue"]) {
-    } 
+    if ([segue.identifier isEqualToString:@"detailSegue"]) {
+        // Get reference to the destination view controller
+        SEBDetailViewController *vc = [segue destinationViewController];
+
+        // Pass any objects to the view controller here, like...
+        [vc setItem:_lastItem];
+    }
+}
+
+- (void)performSegue:(SEBBucketItem *)item {
+    _lastItem = item;
+    [self performSegueWithIdentifier:@"detailSegue" sender:self];
 }
 
 - (IBAction)unwindFromSEBAddViewController:(UIStoryboardSegue *)segue {
@@ -133,6 +148,8 @@
     SEBBucketItem *item = [[SEBBucketItem alloc] initWithTitle:segueController.titleBox.text description:segueController.descriptionBox.text location:location];
     [self.myTableView.bucketListItems addObject:item];
     [self.myTableView.tableView reloadData];
+
+    [self.myMapView addPinToMapAtLocation:item];
 
 }
 

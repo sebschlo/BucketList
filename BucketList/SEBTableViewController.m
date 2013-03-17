@@ -7,7 +7,7 @@
 //
 
 #import "SEBTableViewController.h"
-#import "SEBBucketItem.h"
+
 
 #define kSEBCellIdentifier @"My Cell Identifier"
 
@@ -15,6 +15,7 @@
 @end
 
 @implementation SEBTableViewController
+@synthesize delegate;
 
 - (void)viewDidLoad
 {
@@ -46,6 +47,29 @@
     cell.textLabel.text = item.name;
 
     return cell;
+
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    SEBBucketItem *item = [self.bucketListItems objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    [[self delegate] performSegue:item];
+}
+
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    cell.imageView.image = [UIImage imageNamed:@"bucketItem.png"];
+    
+    [cell setBackgroundColor:[UIColor whiteColor]];
+    [cell.imageView setBackgroundColor:[UIColor whiteColor]];
+    [cell.contentView setBackgroundColor:[UIColor whiteColor]];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+
+
+    return YES;
 }
 
 @end
