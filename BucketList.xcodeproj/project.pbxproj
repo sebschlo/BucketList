@@ -17,6 +17,9 @@
 		9E0A7A2716F0E6C20049C7F3 /* SEBTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A7A2616F0E6C20049C7F3 /* SEBTableViewController.m */; };
 		9E0E0EFF16F5370A00E884B7 /* bucketItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0E0EFE16F5370A00E884B7 /* bucketItem.png */; };
 		9E29BBB116F18E6B008B5874 /* SEBAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E29BBB016F18E6B008B5874 /* SEBAddViewController.m */; };
+		9E5F3C6F16F7E8BD00AC09E5 /* SEBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3C6E16F7E8BD00AC09E5 /* SEBDataManager.m */; };
+		9E5F3C7116F7EEBE00AC09E5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5F3C7016F7EEBE00AC09E5 /* CoreData.framework */; };
+		9E5F3C7416F7F5A200AC09E5 /* BucketList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3C7216F7F5A200AC09E5 /* BucketList.xcdatamodeld */; };
 		9E91FEDF16F25C0C00348FE0 /* SEBBucketItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E91FEDE16F25C0C00348FE0 /* SEBBucketItem.m */; };
 		9E91FEE316F25C7500348FE0 /* SEBMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E91FEE216F25C7500348FE0 /* SEBMapViewController.m */; };
 		9E91FEE616F25C8400348FE0 /* SEBDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E91FEE516F25C8400348FE0 /* SEBDetailViewController.m */; };
@@ -63,6 +66,10 @@
 		9E0E0EFE16F5370A00E884B7 /* bucketItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucketItem.png; sourceTree = SOURCE_ROOT; };
 		9E29BBAF16F18E6B008B5874 /* SEBAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBAddViewController.h; sourceTree = "<group>"; };
 		9E29BBB016F18E6B008B5874 /* SEBAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBAddViewController.m; sourceTree = "<group>"; };
+		9E5F3C6D16F7E8BD00AC09E5 /* SEBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBDataManager.h; sourceTree = "<group>"; };
+		9E5F3C6E16F7E8BD00AC09E5 /* SEBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBDataManager.m; sourceTree = "<group>"; };
+		9E5F3C7016F7EEBE00AC09E5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9E5F3C7316F7F5A200AC09E5 /* BucketList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BucketList.xcdatamodel; sourceTree = "<group>"; };
 		9E91FEDD16F25C0C00348FE0 /* SEBBucketItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBBucketItem.h; sourceTree = "<group>"; };
 		9E91FEDE16F25C0C00348FE0 /* SEBBucketItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBBucketItem.m; sourceTree = "<group>"; };
 		9E91FEE116F25C7500348FE0 /* SEBMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBMapViewController.h; sourceTree = "<group>"; };
@@ -100,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E5F3C7116F7EEBE00AC09E5 /* CoreData.framework in Frameworks */,
 				9E0A7A2216F050670049C7F3 /* QuartzCore.framework in Frameworks */,
 				9EF6EB6116EE7E9B00FC67DE /* CoreLocation.framework in Frameworks */,
 				9EF6EB5F16EE7E9500FC67DE /* MapKit.framework in Frameworks */,
@@ -143,6 +151,7 @@
 		9EF6EB1716EE7D9200FC67DE = {
 			isa = PBXGroup;
 			children = (
+				9E5F3C7016F7EEBE00AC09E5 /* CoreData.framework */,
 				9EF6EB2916EE7D9200FC67DE /* BucketList */,
 				9EF6EB4D16EE7D9300FC67DE /* BucketListTests */,
 				9EF6EB2216EE7D9200FC67DE /* Frameworks */,
@@ -176,11 +185,14 @@
 		9EF6EB2916EE7D9200FC67DE /* BucketList */ = {
 			isa = PBXGroup;
 			children = (
+				9E5F3C7216F7F5A200AC09E5 /* BucketList.xcdatamodeld */,
 				9EF6EB3216EE7D9200FC67DE /* SEBAppDelegate.h */,
 				9EF6EB3316EE7D9200FC67DE /* SEBAppDelegate.m */,
 				9E91FEE016F25C2900348FE0 /* Views */,
 				9E91FEDD16F25C0C00348FE0 /* SEBBucketItem.h */,
 				9E91FEDE16F25C0C00348FE0 /* SEBBucketItem.m */,
+				9E5F3C6D16F7E8BD00AC09E5 /* SEBDataManager.h */,
+				9E5F3C6E16F7E8BD00AC09E5 /* SEBDataManager.m */,
 				9EF6EB2A16EE7D9200FC67DE /* Supporting Files */,
 			);
 			path = BucketList;
@@ -352,6 +364,8 @@
 				9E91FEDF16F25C0C00348FE0 /* SEBBucketItem.m in Sources */,
 				9E91FEE316F25C7500348FE0 /* SEBMapViewController.m in Sources */,
 				9E91FEE616F25C8400348FE0 /* SEBDetailViewController.m in Sources */,
+				9E5F3C6F16F7E8BD00AC09E5 /* SEBDataManager.m in Sources */,
+				9E5F3C7416F7F5A200AC09E5 /* BucketList.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +558,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9E5F3C7216F7F5A200AC09E5 /* BucketList.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9E5F3C7316F7F5A200AC09E5 /* BucketList.xcdatamodel */,
+			);
+			currentVersion = 9E5F3C7316F7F5A200AC09E5 /* BucketList.xcdatamodel */;
+			path = BucketList.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 9EF6EB1816EE7D9200FC67DE /* Project object */;
 }

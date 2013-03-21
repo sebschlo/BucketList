@@ -9,8 +9,6 @@
 #import "SEBDetailViewController.h"
 
 @interface SEBDetailViewController ()
-
-
 @end
 
 @implementation SEBDetailViewController
@@ -20,17 +18,22 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
+    //Add navbar image
+    self.detailViewNavBar.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navBarImage.png"]];
+
+    //Setup map
     self.detailViewMapView.layer.cornerRadius = 10;
     self.detailViewMapView.layer.borderWidth = 2;
     MKCoordinateSpan span = {0.05, 0.05};
-    MKCoordinateRegion region = {self.item.location.coordinate, span};
+    CLLocationCoordinate2D loc = CLLocationCoordinate2DMake([self.item.latitude doubleValue], [self.item.longitude doubleValue]);
+    MKCoordinateRegion region = {loc, span};
     [self.detailViewMapView setRegion:region animated:YES];
     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-    pin.coordinate = self.item.location.coordinate;
+    pin.coordinate = loc;
     [self.detailViewMapView addAnnotation:pin];
     
-    self.detailViewTitle.text = self.item.name;
-    self.detailViewDescription.text = self.item.description;
+    self.detailViewTitle.text = self.item.title;
+    self.detailViewDescription.text = self.item.details;
 
 }
 

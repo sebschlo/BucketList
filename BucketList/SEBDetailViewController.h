@@ -21,5 +21,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *detailViewTitle;
 @property (weak, nonatomic) IBOutlet MKMapView *detailViewMapView;
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *detailViewNavBar;
 
 @end

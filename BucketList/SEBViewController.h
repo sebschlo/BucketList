@@ -15,6 +15,7 @@
 #import "SEBMapViewController.h"
 #import "SEBTableViewController.h"
 #import "SEBBucketItem.h"
+#import "SEBDataManager.h"
 
 @interface SEBViewController : UIViewController <ProcessDataDelegate>
 

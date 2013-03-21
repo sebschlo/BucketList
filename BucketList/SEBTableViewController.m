@@ -7,11 +7,13 @@
 //
 
 #import "SEBTableViewController.h"
+#import "SEBDataManager.h"
 
 
 #define kSEBCellIdentifier @"My Cell Identifier"
 
 @interface SEBTableViewController ()
+@property (strong, nonatomic) SEBDataManager *dm;
 @end
 
 @implementation SEBTableViewController
@@ -21,7 +23,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.bucketListItems = [[NSMutableArray alloc] init];
+    self.dm = [[SEBDataManager alloc] init];
+    self.bucketListItems = [self.dm getAllItems];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,7 +47,7 @@
     }
 
     SEBBucketItem *item = [self.bucketListItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = item.name;
+    cell.textLabel.text = item.title;
 
     return cell;
 
@@ -67,9 +70,22 @@
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-
-
+    // Return YES if you want the specified item to be editable.
     return YES;
 }
+
+// Delete action
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [self.dm deleteItem:[self.bucketListItems objectAtIndex:indexPath.row]];
+    }
+    [self reload];
+}
+
+- (void)reload {
+    self.bucketListItems = [self.dm getAllItems];
+    [self.tableView reloadData];
+}
+
 
 @end

@@ -113,6 +113,7 @@
                     <connections>
                         <outlet property="detailViewDescription" destination="K57-gF-58x" id="THK-LT-tRB"/>
                         <outlet property="detailViewMapView" destination="PVg-mB-k3X" id="c9o-SH-Tnc"/>
+                        <outlet property="detailViewNavBar" destination="hlG-Xl-BSi" id="51f-Kg-Hli"/>
                         <outlet property="detailViewTitle" destination="BaC-5x-PoS" id="fmS-R0-diq"/>
                     </connections>
                 </viewController>
@@ -191,33 +192,6 @@
     <resources>
         <image name="background3.png" width="320" height="480"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SEBAddViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEBAddViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addViewNavBar" candidateClass="UINavigationItem"/>
-                <relationship kind="outlet" name="descriptionBox" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="titleBox" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SEBDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEBDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="detailViewDescription" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="detailViewMapView" candidateClass="MKMapView"/>
-                <relationship kind="outlet" name="detailViewTitle" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="SEBViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SEBViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

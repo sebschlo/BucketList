@@ -14,6 +14,7 @@
 @property (strong, nonatomic) SEBMapViewController *myMapView;
 @property (strong, nonatomic) SEBTableViewController *myTableView;
 @property (strong, nonatomic) SEBBucketItem *lastItem;
+@property (strong, nonatomic) SEBDataManager *dm;
 
 @end
 
@@ -65,8 +66,8 @@
     UIView *background = [[UIView alloc] init];
     frame.origin.x = 0;
     frame.origin.y = 0;
-    frame.size.width = 324;
-    frame.size.height = 216;
+    frame.size.width = 304;
+    frame.size.height = 196;
     background.frame = frame;
     background.alpha = 0.5;
     background.backgroundColor = [UIColor grayColor];
@@ -86,6 +87,8 @@
 
     // Protocol setup
     [_myTableView setDelegate:self];
+
+    _dm = [[SEBDataManager alloc] init];
 
 }
 
@@ -145,11 +148,8 @@
     CLLocation *location = self.myMapView.currentLocation;
 
     // Add item to array
-    SEBBucketItem *item = [[SEBBucketItem alloc] initWithTitle:segueController.titleBox.text description:segueController.descriptionBox.text location:location];
-    [self.myTableView.bucketListItems addObject:item];
-    [self.myTableView.tableView reloadData];
-
-    [self.myMapView addPinToMapAtLocation:item];
+    [_dm addItemWithTitle:segueController.titleBox.text details:segueController.descriptionBox.text latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
+    [_myTableView reload];
 
 }
 

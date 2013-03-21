@@ -19,6 +19,8 @@
 {
     id <ProcessDataDelegate> delegate;
 }
-@property (strong, nonatomic) NSMutableArray *bucketListItems;
+@property (strong, nonatomic) NSArray *bucketListItems;
 @property (retain) id delegate;
+@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
+- (void)reload;
 @end

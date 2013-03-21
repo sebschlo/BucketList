@@ -28,7 +28,7 @@ BOOL moveMap = YES;
     frame.origin.x = -10;
     frame.origin.y = -10;
     frame.size.width = 324;
-    frame.size.height = 216;
+    frame.size.height = 225;
 
     self.myMapView =[[MKMapView alloc] initWithFrame:frame];
     self.myMapView.showsUserLocation = YES;
@@ -73,10 +73,10 @@ BOOL moveMap = YES;
 - (void)addPinToMapAtLocation:(SEBBucketItem *)item
 {
     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
-
-    pin.coordinate = item.location.coordinate;
-    pin.title = item.name;
-    pin.subtitle = item.description;
+    CLLocationCoordinate2D loc = CLLocationCoordinate2DMake([item.latitude doubleValue], [item.longitude doubleValue]);
+    pin.coordinate = loc;
+    pin.title = item.title;
+    pin.subtitle = item.details;
     [self.myMapView addAnnotation:pin];
 
 }

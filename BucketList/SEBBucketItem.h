@@ -8,11 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <CoreData/CoreData.h>
 
-@interface SEBBucketItem : NSObject
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *description;
-@property (strong, nonatomic) CLLocation *location;
-@property (nonatomic) Boolean done;
-- (id) initWithTitle:(NSString *)name description:(NSString *)description location:(CLLocation *)location;
+@interface SEBBucketItem : NSManagedObject
+
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *details;
+@property (nonatomic, retain) NSNumber *latitude;
+@property (nonatomic, retain) NSNumber *longitude;
+@property (nonatomic, retain) NSNumber *completed;
+@property (nonatomic, retain) NSDate *date;
+
 @end

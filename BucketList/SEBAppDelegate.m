@@ -18,12 +18,15 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    // Get the SEbbViewController
     NSArray *array = self.window.rootViewController.childViewControllers;
     for (int i=0; i<[array count]; i++) {
         if ([[array objectAtIndex:i] isKindOfClass:[SEBViewController class]]) {
             _vc = [array objectAtIndex:i];
         }
     }
+
     return YES;
 }
 							

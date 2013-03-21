@@ -8,26 +8,13 @@
 
 #import "SEBBucketItem.h"
 
-@interface SEBBucketItem ()
-
-
-
-@end
-
 @implementation SEBBucketItem
 
-- (id) initWithTitle:(NSString *)name description:(NSString *)description location:(CLLocation *)location {
-
-    self = [super init];
-    if( !self ) return nil;
-
-    self.name = name;
-    self.description = description;
-    self.location = location;
-    self.done = NO;
-
-    return self;
-}
-
+@dynamic title;
+@dynamic details;
+@dynamic latitude;
+@dynamic longitude;
+@dynamic completed;
+@dynamic date;
 
 @end
