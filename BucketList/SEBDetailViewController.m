@@ -7,11 +7,14 @@
 //
 
 #import "SEBDetailViewController.h"
+#import "SEBDataManager.h"
 
 @interface SEBDetailViewController ()
+@property (strong, nonatomic) SEBDataManager *dm;
 @end
 
 @implementation SEBDetailViewController
+@synthesize detailDelegate;
 
 - (void)viewDidLoad
 {
@@ -31,9 +34,12 @@
     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
     pin.coordinate = loc;
     [self.detailViewMapView addAnnotation:pin];
-    
+
+    //Setup fields
     self.detailViewTitle.text = self.item.title;
     self.detailViewDescription.text = self.item.details;
+
+    self.dm = [[SEBDataManager alloc] init];
 
 }
 
@@ -43,5 +49,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)editItem:(id)sender {
+    
+    if ([self.editButton.title isEqualToString:@"Edit"]) {
+        self.editButton.title = @"DONE";
+        self.detailViewDescription.enabled = YES;
+        self.detailViewTitle.enabled = YES;
+    } else if ([self.editButton.title isEqualToString:@"DONE"]){
+        self.editButton.title = @"Edit";
+        self.detailViewTitle.enabled = NO;
+        self.detailViewDescription.enabled = NO;
+        [self.dm updateItem:_item withTitle:self.detailViewTitle.text details:self.detailViewDescription.text];
+        [[self detailDelegate] reloadTable];
+    }
+
+}
 
 @end

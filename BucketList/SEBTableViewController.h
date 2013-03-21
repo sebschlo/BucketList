@@ -10,17 +10,17 @@
 #import <Foundation/Foundation.h>
 #import "SEBBucketItem.h"
 
-@protocol ProcessDataDelegate <NSObject>
+@protocol TableControllerDelegate <NSObject>
 @required
 - (void)performSegue:(SEBBucketItem*)item;
 @end
 
 @interface SEBTableViewController : UITableViewController
 {
-    id <ProcessDataDelegate> delegate;
+    id <TableControllerDelegate> tableDelegate;
 }
 @property (strong, nonatomic) NSArray *bucketListItems;
-@property (retain) id delegate;
+@property (retain) id tableDelegate;
 @property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
 - (void)reload;
 @end

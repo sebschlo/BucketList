@@ -13,7 +13,16 @@
 
 #import "SEBBucketItem.h"
 
+@protocol DetailControllerDelegate <NSObject>
+@required
+- (void)reloadTable;
+@end
+
 @interface SEBDetailViewController : UIViewController 
+{
+    id <DetailControllerDelegate> detailDelegate;
+}
+@property (retain) id detailDelegate;
 
 @property (strong, nonatomic) SEBBucketItem *item;
 
@@ -22,5 +31,6 @@
 @property (weak, nonatomic) IBOutlet MKMapView *detailViewMapView;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailViewNavBar;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
 @end

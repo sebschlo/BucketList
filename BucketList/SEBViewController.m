@@ -86,7 +86,7 @@
     [tableContainer addSubview:self.myTableView.tableView];
 
     // Protocol setup
-    [_myTableView setDelegate:self];
+    [_myTableView setTableDelegate:self];
 
     _dm = [[SEBDataManager alloc] init];
 
@@ -121,6 +121,9 @@
     }
 }
 
+- (void)reloadTable {
+    [self.myTableView reload];
+}
 
 #pragma mark - Segue
 
@@ -131,6 +134,9 @@
 
         // Pass any objects to the view controller here, like...
         [vc setItem:_lastItem];
+
+        // Set up protocol
+        [vc setDetailDelegate:self];
     }
 }
 

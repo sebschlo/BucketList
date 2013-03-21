@@ -17,7 +17,7 @@
 @end
 
 @implementation SEBTableViewController
-@synthesize delegate;
+@synthesize tableDelegate;
 
 - (void)viewDidLoad
 {
@@ -57,7 +57,7 @@
     SEBBucketItem *item = [self.bucketListItems objectAtIndex:indexPath.row];
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    [[self delegate] performSegue:item];
+    [[self tableDelegate] performSegue:item];
 }
 
 

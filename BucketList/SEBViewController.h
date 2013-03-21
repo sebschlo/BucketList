@@ -17,7 +17,7 @@
 #import "SEBBucketItem.h"
 #import "SEBDataManager.h"
 
-@interface SEBViewController : UIViewController <ProcessDataDelegate>
+@interface SEBViewController : UIViewController <TableControllerDelegate, DetailControllerDelegate>
 
 - (void)stopGettingLocation;
 - (void)startGettingLocation;
