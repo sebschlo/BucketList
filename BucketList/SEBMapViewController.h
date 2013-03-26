@@ -18,4 +18,6 @@
 @property (strong, nonatomic) CLLocation *currentLocation;
 - (void)addPinToMapAtLocation:(SEBBucketItem *)item;
 - (void)removeAllAnnotations;
+- (void)centerMapOnLocation;
+- (void)showAllMapAnnotations;
 @end

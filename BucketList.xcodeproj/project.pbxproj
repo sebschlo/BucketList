@@ -15,6 +15,8 @@
 		9E0A7A2716F0E6C20049C7F3 /* SEBTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E0A7A2616F0E6C20049C7F3 /* SEBTableViewController.m */; };
 		9E0E0EFF16F5370A00E884B7 /* bucketItem.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E0E0EFE16F5370A00E884B7 /* bucketItem.png */; };
 		9E29BBB116F18E6B008B5874 /* SEBAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E29BBB016F18E6B008B5874 /* SEBAddViewController.m */; };
+		9E3F0303170137470010A979 /* mapButtons1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F0301170137470010A979 /* mapButtons1.png */; };
+		9E3F0304170137470010A979 /* mapButtons2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3F0302170137470010A979 /* mapButtons2.png */; };
 		9E5F3C6F16F7E8BD00AC09E5 /* SEBDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3C6E16F7E8BD00AC09E5 /* SEBDataManager.m */; };
 		9E5F3C7116F7EEBE00AC09E5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5F3C7016F7EEBE00AC09E5 /* CoreData.framework */; };
 		9E5F3C7416F7F5A200AC09E5 /* BucketList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9E5F3C7216F7F5A200AC09E5 /* BucketList.xcdatamodeld */; };
@@ -63,6 +65,8 @@
 		9E0E0EFE16F5370A00E884B7 /* bucketItem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bucketItem.png; sourceTree = SOURCE_ROOT; };
 		9E29BBAF16F18E6B008B5874 /* SEBAddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBAddViewController.h; sourceTree = "<group>"; };
 		9E29BBB016F18E6B008B5874 /* SEBAddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBAddViewController.m; sourceTree = "<group>"; };
+		9E3F0301170137470010A979 /* mapButtons1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapButtons1.png; sourceTree = SOURCE_ROOT; };
+		9E3F0302170137470010A979 /* mapButtons2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mapButtons2.png; sourceTree = SOURCE_ROOT; };
 		9E5F3C6D16F7E8BD00AC09E5 /* SEBDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SEBDataManager.h; sourceTree = "<group>"; };
 		9E5F3C6E16F7E8BD00AC09E5 /* SEBDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SEBDataManager.m; sourceTree = "<group>"; };
 		9E5F3C7016F7EEBE00AC09E5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -203,6 +207,8 @@
 				9EF6EB2C16EE7D9200FC67DE /* InfoPlist.strings */,
 				9EF6EB2F16EE7D9200FC67DE /* main.m */,
 				9EF6EB3116EE7D9200FC67DE /* BucketList-Prefix.pch */,
+				9E3F0301170137470010A979 /* mapButtons1.png */,
+				9E3F0302170137470010A979 /* mapButtons2.png */,
 				9E5F3CC516FADC4F00AC09E5 /* check.png */,
 				9E0E0EFE16F5370A00E884B7 /* bucketItem.png */,
 				9EF6EB3516EE7D9200FC67DE /* Default.png */,
@@ -318,6 +324,8 @@
 				9E0A7A2416F0C5BC0049C7F3 /* navBarImage.png in Resources */,
 				9E0E0EFF16F5370A00E884B7 /* bucketItem.png in Resources */,
 				9E5F3CC616FADC4F00AC09E5 /* check.png in Resources */,
+				9E3F0303170137470010A979 /* mapButtons1.png in Resources */,
+				9E3F0304170137470010A979 /* mapButtons2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

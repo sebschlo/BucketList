@@ -49,6 +49,7 @@
 
     [self.view addSubview:[_myMapView view]];
 
+
     
     ///////////////////////
     // Create table view //
@@ -127,6 +128,17 @@
         }
     }
 }
+
+/// BUTTON METHODS ///
+
+- (void)centerOnLocation {
+    [self.myMapView centerMapOnLocation];
+}
+
+- (void)showAllAnnotations {
+    [self.myMapView showAllMapAnnotations];
+}
+
 
 /// PROTOCOL METHODS ///
 

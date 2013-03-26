@@ -65,6 +65,7 @@
         self.editButton.title = @"DONE";
         self.detailViewDescription.enabled = YES;
         self.detailViewTitle.enabled = YES;
+        [self.detailViewTitle becomeFirstResponder];
     } else if ([self.editButton.title isEqualToString:@"DONE"]){
         self.editButton.title = @"Edit";
         self.detailViewTitle.enabled = NO;

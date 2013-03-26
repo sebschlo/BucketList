@@ -37,7 +37,7 @@ BOOL moveMap = YES;
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self.locationManager startUpdatingLocation];
-    
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,13 +62,20 @@ BOOL moveMap = YES;
     self.currentLocation = location;
 
     if (moveMap) {
-        MKCoordinateSpan span = {0.01, 0.01};
-        MKCoordinateRegion region = {location.coordinate, span};
-        [self.myMapView setRegion:region animated:YES];
+        [self centerMapOnLocation];
         moveMap = NO;
     }  
 }
 
+- (void)centerMapOnLocation {
+    MKCoordinateSpan span = {0.01, 0.01};
+    MKCoordinateRegion region = {self.currentLocation.coordinate, span};
+    [self.myMapView setRegion:region animated:YES];
+}
+
+- (void)showAllMapAnnotations {
+    
+}
 
 - (void)removeAllAnnotations {
     [self.myMapView removeAnnotations:[self.myMapView annotations]];
