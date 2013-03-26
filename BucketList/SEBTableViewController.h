@@ -13,6 +13,10 @@
 @protocol TableControllerDelegate <NSObject>
 @required
 - (void)performSegue:(SEBBucketItem*)item;
+- (void)reloadTable;
+- (NSArray *)getAllTableItems;
+- (void)deleteTableItem:(SEBBucketItem *)item;
+
 @end
 
 @interface SEBTableViewController : UITableViewController
@@ -21,6 +25,4 @@
 }
 @property (strong, nonatomic) NSArray *bucketListItems;
 @property (retain) id tableDelegate;
-@property (nonatomic,strong) NSManagedObjectContext* managedObjectContext;
-- (void)reload;
 @end

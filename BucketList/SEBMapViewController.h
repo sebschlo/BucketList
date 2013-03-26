@@ -17,4 +17,5 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) CLLocation *currentLocation;
 - (void)addPinToMapAtLocation:(SEBBucketItem *)item;
+- (void)removeAllAnnotations;
 @end

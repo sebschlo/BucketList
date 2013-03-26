@@ -95,7 +95,6 @@
     } else if ([item.completed boolValue] == YES) {
         item.completed = [NSNumber numberWithBool:NO];
     }
-
     NSError *error;
     if (![context save:&error]) {
         NSLog(kSEBSaveError, [error localizedDescription]);

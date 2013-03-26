@@ -12,10 +12,6 @@
 
 #define kSEBCellIdentifier @"My Cell Identifier"
 
-@interface SEBTableViewController ()
-@property (strong, nonatomic) SEBDataManager *dm;
-@end
-
 @implementation SEBTableViewController
 @synthesize tableDelegate;
 
@@ -23,8 +19,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.dm = [[SEBDataManager alloc] init];
-    self.bucketListItems = [self.dm getAllItems];
+
+    self.bucketListItems = [[self tableDelegate] getAllTableItems];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,7 +58,12 @@
 
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    cell.imageView.image = [UIImage imageNamed:@"bucketItem.png"];
+    SEBBucketItem *item = [self.bucketListItems objectAtIndex:indexPath.row];
+    if ([item.completed boolValue]) {
+        cell.imageView.image = [UIImage imageNamed:@"check.png"];
+    } else {
+        cell.imageView.image = [UIImage imageNamed:@"bucketItem.png"];
+    }
     
     [cell setBackgroundColor:[UIColor whiteColor]];
     [cell.imageView setBackgroundColor:[UIColor whiteColor]];
@@ -77,14 +78,8 @@
 // Delete action
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [self.dm deleteItem:[self.bucketListItems objectAtIndex:indexPath.row]];
+        [[self tableDelegate] deleteTableItem:[self.bucketListItems objectAtIndex:indexPath.row]];
     }
-    [self reload];
-}
-
-- (void)reload {
-    self.bucketListItems = [self.dm getAllItems];
-    [self.tableView reloadData];
 }
 
 

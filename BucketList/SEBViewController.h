@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
-#import <CoreLocation/CoreLocation.h>
+
 
 #import "SEBAddViewController.h"
 #import "SEBDetailViewController.h"

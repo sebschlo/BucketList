@@ -23,6 +23,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // Initiate data manager
+    _dm = [[SEBDataManager alloc] init];
+
 	// Do any additional setup after loading the view, typically from a nib.
     self.navBar.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navBarImage.png"]];
 
@@ -84,11 +88,11 @@
     [self.myTableView.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
 
     [tableContainer addSubview:self.myTableView.tableView];
+    
+    [self reloadTable];
 
     // Protocol setup
     [_myTableView setTableDelegate:self];
-
-    _dm = [[SEBDataManager alloc] init];
 
 }
 
@@ -97,6 +101,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+/// LOCATION METHODS ///
 
 - (void)stopGettingLocation {
     [self.myMapView.locationManager stopUpdatingLocation];
@@ -121,8 +128,37 @@
     }
 }
 
+/// PROTOCOL METHODS ///
+
+- (NSArray *)getAllTableItems {
+    return [self.dm getAllItems];
+}
+
+- (void)deleteTableItem:(SEBBucketItem *)item {
+    [self.dm deleteItem:item];
+    [self reloadTable];
+}
+
+- (void)toggleBucketItemDone:(SEBBucketItem *)item {
+    [self.dm toggleItemDone:item];
+    [self reloadTable];
+}
+
+- (void)updateBucketItem:(SEBBucketItem *)item withTitle:(NSString *)title details:(NSString *)details {
+    [self.dm updateItem:item withTitle:title details:details];
+    [self reloadTable];
+}
+
 - (void)reloadTable {
-    [self.myTableView reload];
+    NSArray *items = [self getAllTableItems];
+    
+    self.myTableView.bucketListItems = items;
+    [self.myTableView.tableView reloadData];
+
+    [_myMapView removeAllAnnotations];
+    for (int i=0; i<[items count]; i++) {
+        [_myMapView addPinToMapAtLocation:[items objectAtIndex:i]];
+    }
 }
 
 #pragma mark - Segue
@@ -155,7 +191,7 @@
 
     // Add item to array
     [_dm addItemWithTitle:segueController.titleBox.text details:segueController.descriptionBox.text latitude:location.coordinate.latitude longitude:location.coordinate.longitude];
-    [_myTableView reload];
+    [self reloadTable];
 
 }
 

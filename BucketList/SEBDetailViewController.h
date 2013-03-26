@@ -16,6 +16,9 @@
 @protocol DetailControllerDelegate <NSObject>
 @required
 - (void)reloadTable;
+- (void)toggleBucketItemDone:(SEBBucketItem *)item;
+- (void)updateBucketItem:(SEBBucketItem *)item withTitle:(NSString *)title details:(NSString *)details;
+
 @end
 
 @interface SEBDetailViewController : UIViewController 
@@ -29,8 +32,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *detailViewDescription;
 @property (weak, nonatomic) IBOutlet UITextField *detailViewTitle;
 @property (weak, nonatomic) IBOutlet MKMapView *detailViewMapView;
+@property (weak, nonatomic) IBOutlet UILabel *detailViewDate;
+@property (weak, nonatomic) IBOutlet UIButton *detailViewDone;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *detailViewNavBar;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
+
 
 @end

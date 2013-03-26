@@ -70,6 +70,10 @@ BOOL moveMap = YES;
 }
 
 
+- (void)removeAllAnnotations {
+    [self.myMapView removeAnnotations:[self.myMapView annotations]];
+}
+
 - (void)addPinToMapAtLocation:(SEBBucketItem *)item
 {
     MKPointAnnotation *pin = [[MKPointAnnotation alloc] init];
@@ -77,8 +81,8 @@ BOOL moveMap = YES;
     pin.coordinate = loc;
     pin.title = item.title;
     pin.subtitle = item.details;
-    [self.myMapView addAnnotation:pin];
 
+    [self.myMapView addAnnotation:pin];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
